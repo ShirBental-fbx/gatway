@@ -14,14 +14,15 @@ RUN apt-get update && apt-get install -y \
 # Install uv
 RUN curl -Ls https://astral.sh/uv/install.sh | sh
 
-# Copy deps first (better caching)
+# Install deps into system
 COPY requirements.in requirements.txt ./
-
-# Install deps into system site-packages
 RUN uv pip sync --system requirements.txt
 
-# Copy app
+# Copy source
 COPY src/ src/
 
+# 👇 THIS IS THE FIX
+WORKDIR /app/src
+
 EXPOSE 8000
-CMD ["python", "-m", "uvicorn", "gateway.main:app", "--host", "0.0.0.0", "--port", "8000", "--app-dir", "src"]
+CMD ["python", "-m", "uvicorn", "gateway.main:app", "--host", "0.0.0.0", "--port", "8000"]
