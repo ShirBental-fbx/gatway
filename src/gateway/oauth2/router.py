@@ -17,6 +17,7 @@ from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from sqlalchemy.orm import Session
 from starlette.templating import Jinja2Templates
 
+from gateway.context.oauth_context import OAuthClientContext, get_oauth_client_context
 from gateway.db import get_db
 from gateway.db.context import set_db
 from gateway.oauth2.asgi_request import ASGIOAuthRequest
@@ -43,31 +44,14 @@ async def authorize_get(
     state: str = Query(default=""),
     code_challenge: str | None = Query(default=None),
     code_challenge_method: str | None = Query(default=None),
+    client_ctx: OAuthClientContext = Depends(get_oauth_client_context),
 ):
-    """
-    Handle GET request to authorization endpoint.
-    
-    Displays the consent page for the user to authorize the client.
-    In a real implementation, this would first authenticate the user.
-    """
-    # Set DB context for Authlib storage functions
     set_db(db)
-    
-    # Validate client
-  #  client = query_client(client_id)
-   # if not client:
-    #    raise HTTPException(
-     #       status_code=status.HTTP_400_BAD_REQUEST,
-      #      detail="Invalid client_id"
-       # )
-    
-    # For now, render a simple authorization page
-    # In production, this would integrate with your auth system (CAS, etc.)
+
     return templates.TemplateResponse(
         "authorize.html",
         {
             "request": request,
-   #         "client_name": client.client_metadata.get("client_name", client_id),
             "scope": scope,
             "client_id": client_id,
             "redirect_uri": redirect_uri,
@@ -75,6 +59,8 @@ async def authorize_get(
             "state": state,
             "code_challenge": code_challenge or "",
             "code_challenge_method": code_challenge_method or "",
+            "partner_id": client_ctx.partner_id,
+            "api_profile": client_ctx.api_profile,
         }
     )
 

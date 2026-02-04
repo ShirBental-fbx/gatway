@@ -1,12 +1,14 @@
 # syntax=docker/dockerfile:1
-FROM python:3.14-slim-bookworm
+FROM python:3.12-slim-bookworm
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PIP_NO_CACHE_DIR=1 \
     PIP_PROGRESS_BAR=off \
-    PYTHONPATH=/app/src
+    PYTHONPATH=/app/src \
+    GATEWAY_DEV_AUTH=true \
+    GATEWAY_ROOT_PATH=/gateway/fastapi
 
 WORKDIR /app
 
@@ -36,9 +38,10 @@ RUN python -m pip install --upgrade pip \
       "jinja2>=3.1.0" \
       "itsdangerous>=2.0" \
       "python-multipart>=0.0.9" \
+      "email-validator>=2.0" \
       "httpx>=0.27.0"
 
 COPY src ./src
 
 EXPOSE 8001
-CMD ["python", "-m", "uvicorn", "gateway.main:app", "--host", "0.0.0.0", "--port", "8001"]
+CMD python -m uvicorn gateway.main:app --host 0.0.0.0 --port 8001 --proxy-headers --forwarded-allow-ips "*" --root-path /gateway/fastapi

@@ -7,7 +7,7 @@ Provides SQLAlchemy engine and session factory for the gateway.
 from __future__ import annotations
 
 import os
-from typing import Generator
+from typing import Generator, AsyncGenerator
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
@@ -35,7 +35,7 @@ SessionLocal = sessionmaker(
 )
 
 
-def get_db() -> Generator[Session, None, None]:
+async def get_db() -> AsyncGenerator[Session, None]:
     """
     Database session dependency for FastAPI.
     

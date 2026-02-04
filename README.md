@@ -154,6 +154,10 @@ This project was migrated from the Flask-based `api/src/oauth2` module. Key chan
 4. **Request handling**: Custom `ASGIOAuthRequest` adapter for Authlib compatibility
 5. **Context-based sessions**: Using `contextvars` for request-scoped DB sessions
 
-## License
-
-Proprietary - Fundbox
+# Build and Run 
+docker build -t gateway-fastapi .
+docker rm -f gateway-fastapi 2>/dev/null || true
+docker run -d \
+  --name gateway-fastapi \
+  -p 8002:8001 \
+  gateway-fastapi

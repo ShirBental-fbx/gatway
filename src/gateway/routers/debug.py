@@ -11,12 +11,12 @@ router = APIRouter(prefix="/debug", tags=["debug"])
 
 
 @router.get("/health")
-def health() -> dict:
+async def health() -> dict:
     return {"status": "ok"}
 
 
 @router.get("/db")
-def db_check(db: Session = Depends(get_db)) -> dict:
+async def db_check(db: Session = Depends(get_db)) -> dict:
     # SQLite-friendly, works everywhere
     value = db.execute(text("SELECT 1")).scalar_one()
     return {"db": "ok", "select_1": value}
