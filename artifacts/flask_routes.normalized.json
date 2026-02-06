@@ -1,0 +1,592 @@
+{
+  "routes": [
+    {
+      "path": "/<string:original_platform>/account/<string:original_platform_unique_id>/migrate_user_to_platform",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "migrate_user_to_platform"
+    },
+    {
+      "path": "/<string:platform>/account/<string:platform_unique_id>",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "account_status"
+    },
+    {
+      "path": "/<string:platform>/account/<string:platform_unique_id>/invoice/<string:invoice_id_at_platform>",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "invoice_status"
+    },
+    {
+      "path": "/<string:platform>/account/<string:platform_unique_id>/send_verification_email",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "send_verification_email"
+    },
+    {
+      "path": "/api/v1/authenticate",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/api/v1/authenticate"
+    },
+    {
+      "path": "/api/v1/refresh_token",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/api/v1/refresh_token"
+    },
+    {
+      "path": "/api/v1/reporting/<string:lead_id>",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/api/v1/reporting/get_current_state"
+    },
+    {
+      "path": "/api/v1/reporting/registered_webhook_url",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/api/v1/registered_webhook_url"
+    },
+    {
+      "path": "/api/v1/reporting/test_webhook_url",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/api/v1/test_webhook_url"
+    },
+    {
+      "path": "/fetch_credit_report",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "fetch_credit_report"
+    },
+    {
+      "path": "/fetch_ssn",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "fetch_ssn"
+    },
+    {
+      "path": "/fetch_ssn_masked",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "fetch_ssn_masked"
+    },
+    {
+      "path": "/fuse/<string:fuse_id>/account/<string:partner_user_id>",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "fuse_status"
+    },
+    {
+      "path": "/galileo/AccountEvent",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "account_event_api"
+    },
+    {
+      "path": "/galileo/Authorization",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "auhorization_event_api"
+    },
+    {
+      "path": "/galileo/Settlement",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "settlement_event_api"
+    },
+    {
+      "path": "/galileo/Transaction",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "transaction_event_api"
+    },
+    {
+      "path": "/galileo/incoming_ach_debit_transaction",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "galileo_incoming_ach_debit_transaction"
+    },
+    {
+      "path": "/galileo/incoming_debit_card_transaction/Authorization",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "galileo_incoming_debit_card_transaction"
+    },
+    {
+      "path": "/heartbeat",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "heartbeat"
+    },
+    {
+      "path": "/hooks/<string:partner_name>/<string:loan_app_id>",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "generic_hook"
+    },
+    {
+      "path": "/hooks/<string:partner_name>/lead",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "create_business_lead"
+    },
+    {
+      "path": "/hooks/<string:partner_name>/leads",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "create_business_leads"
+    },
+    {
+      "path": "/hooks/alloy/journey",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "alloy_journey_application_status_change_message"
+    },
+    {
+      "path": "/hooks/alloy/journey/v2",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "alloy_journey_application_status_change_message_v2"
+    },
+    {
+      "path": "/hooks/baselayer/search",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/hooks/baselayer/search"
+    },
+    {
+      "path": "/hooks/docusign/",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "docusign_hook"
+    },
+    {
+      "path": "/hooks/fundera/lead",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "create_fundera_business_lead"
+    },
+    {
+      "path": "/hooks/inscribe/collect_session",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/hooks/inscribe/collect_session"
+    },
+    {
+      "path": "/hooks/inscribe/customer_approval",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/hooks/inscribe/customer_approval"
+    },
+    {
+      "path": "/hooks/inscribe/doc_state",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/hooks/inscribe/doc_state"
+    },
+    {
+      "path": "/hooks/lendio/<string:webhook_subtype>/",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "lendio_hook"
+    },
+    {
+      "path": "/hooks/lendio/v2/lead",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "create_lendio_business_lead"
+    },
+    {
+      "path": "/hooks/ocrolus",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "ocrolus_events"
+    },
+    {
+      "path": "/hooks/plaid",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "plaid_hook"
+    },
+    {
+      "path": "/hooks/pre_qual_augmented_underwriting",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "pre_qual_augmented_underwriting"
+    },
+    {
+      "path": "/hooks/qbf/<string:loan_app_id>",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "qbf_hook"
+    },
+    {
+      "path": "/hooks/stripe/fundbox/message",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "stripe_incoming_fundbox_message"
+    },
+    {
+      "path": "/hooks/stripe/pimco/message",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "stripe_incoming_pimco_message"
+    },
+    {
+      "path": "/hooks/twilio/message",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "twilio_incoming_message"
+    },
+    {
+      "path": "/hooks/twilio/message_status_update",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "twilio_message_status_update"
+    },
+    {
+      "path": "/hooks/twilio/user_prefs",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "twilio_user_prefs_update"
+    },
+    {
+      "path": "/mailhouse_round_delivered_notification",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "mailhouse_delivered_notification"
+    },
+    {
+      "path": "/oauth2/revoke",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "revoke"
+    },
+    {
+      "path": "/oauth2/token",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "token"
+    },
+    {
+      "path": "/opt_out",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "opt_out"
+    },
+    {
+      "path": "/rtd_apply",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "rtd_apply"
+    },
+    {
+      "path": "/rtd_remove",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "rtd_remove"
+    },
+    {
+      "path": "/s3_data_upload",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "s3_data_upload_notification"
+    },
+    {
+      "path": "/send_notification",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "send_notification"
+    },
+    {
+      "path": "/stripe/disconnect_user",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/stripe/disconnect_user"
+    },
+    {
+      "path": "/stripe/get_dashboard_data",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "stripe_get_dashboard_data"
+    },
+    {
+      "path": "/stripe/get_user_status",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "stripe_get_user_status"
+    },
+    {
+      "path": "/stripe/get_user_token",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/stripe/get_user_token"
+    },
+    {
+      "path": "/stripe/is_user_signed_disclosure",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "/stripe/is_user_signed_disclosure"
+    },
+    {
+      "path": "/stripe/prepare_offers",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "stripe_prepare_offers"
+    },
+    {
+      "path": "/stripe/request_draw",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "stripe_request_draw"
+    },
+    {
+      "path": "/v1/loan/agreements/<string:token>",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "get_agreement_url"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/application_review_started",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "application_review_started"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/cancel_partner_application",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "cancel_partner_application"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/cancel_partner_offer_creation",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "cancel_partner_offer_creation"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/change_bank_account",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "change_bank_account"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/complete_lead_advance_pre_qual",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "complete_lead_advance_pre_qual"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/create_partner_application",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "create_partner_application"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/create_partner_offer",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "create_partner_offer"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/echo",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "stripe_incoming_fundbox_echo"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/send_payment_notification",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "send_payment_notification"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/send_report",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "send_report"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/submit_lead",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "create_generic_business_lead"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/submit_lead_advance_pre_qual",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "submit_lead_advance_pre_qual"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/submit_lead_with_pre_qual",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "create_generic_business_lead_with_pre_qual"
+    },
+    {
+      "path": "/v1/partners/<string:partner_name>/submit_partner_application",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "submit_partner_application"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/calculate_account_outstanding_balance",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "calculate_account_outstanding_balance"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/calculate_account_payoff",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "calculate_account_payoff"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/calculate_custom_amount_payment",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "calculate_custom_amount_payment"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/calculate_draw_outstanding_balance",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "calculate_draw_outstanding_balance"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/calculate_draw_payoff",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "calculate_draw_payoff"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/calculate_overdue_balance_payment",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "calculate_overdue_balance_payment"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/execute_draw_payoff",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "execute_draw_payoff"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/get_draws",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "get_draws"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/retrieve_payment_method",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "retrieve_payment_method"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/start_application",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "start_application"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/submit_application",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "submit_application"
+    },
+    {
+      "path": "/v1/partners/loc/<string:partner_name>/submit_draw",
+      "methods": [
+        "GET"
+      ],
+      "endpoint": "submit_draw"
+    }
+  ]
+}
